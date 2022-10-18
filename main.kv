@@ -1,0 +1,68 @@
+Screen:
+    BoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            title: 'MyAPP'
+            left_action_items: [["menu", lambda x: x]]
+            right_action_items: [["dots-vertical", lambda x: x]]
+        FormLogin:
+
+<SenhaCard>:
+    size_hint: 0.7, 0.7
+    pos_hint: {"center_x": .5, "center_y": .5}
+    orientation: 'vertical'
+    MDBoxLayout:
+        size_hint_y: .2
+        padding: [25, 0, 25, 0]
+        md_bg_color: app.theme_cls.primary_color
+        MDLabel:
+            text: 'Mudar Senha'
+            theme_text_color: 'Custom'
+            text_color: 1,1,1,1
+        MDIconButton:
+            icon: 'close'
+            theme_text_color: 'Custom'
+            text_color: 1,1,1,1
+            pos_hint: {"center_y": .5}
+            on_release: root.fechar()
+
+    MDFloatLayout:
+        MDTextField:
+            hint_text: 'Nova Senha'
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+        MDTextField:
+            hint_text: 'Confirmar Nova Senha'
+            size_hint_x: 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+        MDRaisedButton:
+            text: "Confirmar"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            size_hint_x: 0.8
+
+<FormLogin>:
+    MDIconButton:
+        icon: "language-python"
+        icon_size: "70sp"
+        pos_hint: {"center_x": .5, "center_y": .8}
+    MDTextField:
+        hint_text: "Usuário:"
+        pos_hint: {'center_x': 0.5,'center_y': 0.6}
+        size_hint_x: 0.8
+    MDTextField:
+        hint_text: "Senha:"
+        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+        size_hint_x: 0.8
+    MDRaisedButton:
+        text: "Login"
+        pos_hint: {'center_x': 0.5,'center_y': 0.4}
+        size_hint_x: 0.8
+    MDLabel:
+        text: "Esqueceu a senha?"
+        halign: "center"
+        pos_hint: {'center_y': 0.3}
+    MDTextButton:
+        text: "Clique Aqui!"
+        color: "blue"
+        pos_hint: {'center_x': 0.5,'center_y': 0.25}
+        on_release: root.abrir_card()
